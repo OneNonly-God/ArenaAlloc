@@ -11,14 +11,6 @@ Include the arena.h and arena.c files appropriately in your project and include 
 
 The allocator reserves a large virtual address range (default: 4 GiB) but only commits physical memory as needed.
 
-[ Reserved VA Space ]
-┌──────────────┬──────────────────────┬────────────────────────┐
-│   Used       │   Free (committed)   │   Uncommitted          │
-│              │                      │   (no physical pages)  │
-└──────────────┴──────────────────────┴────────────────────────┘
-^base          ^pos                   ^committed
-
-
 Reserve → no physical memory used
 Commit → pages become readable/writable
 Decommit → pages returned to OS
